@@ -20,6 +20,10 @@ app.use(express.json())
 app.use("/api/users", require("./routes/userRoutes"))
 app.use("/api/blogs", require("./routes/blogRoutes"))
 
+//check backend is running 
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack)
